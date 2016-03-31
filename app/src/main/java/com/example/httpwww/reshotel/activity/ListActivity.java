@@ -20,6 +20,7 @@ public class ListActivity extends Activity {
     private Toolbar toolbar;
 
 
+
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -58,7 +59,7 @@ public class ListActivity extends Activity {
                 }
                else if(position>3)
                 {
-                    Toast.makeText(getApplicationContext(), "service not available", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "service not available", Toast.LENGTH_SHORT).show();
                 }
             }
 
