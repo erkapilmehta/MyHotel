@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:fitsSystemWindows="true">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="60dp"
+    android:fitsSystemWindows="false">
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
@@ -14,137 +17,168 @@
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/input_layout_name1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/box_height"
-        android:background="@layout/edit_text_stroke"
-        android:backgroundTint="@color/windowBackground"
-        android:inputType="textPersonName"
-        android:hint="@string/hint_name"
-        android:ems="10"
-        android:id="@+id/editText"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_margin="@dimen/activity_horizontal_margin"
-        android:textSize="15dp" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <EditText
+            android:background="@layout/edit_text_stroke"
+            android:backgroundTint="@color/windowBackground"
+            android:id="@+id/full_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:ems="10"
+            android:hint="@string/hint_name"
+            android:imeOptions="actionDone"
+            android:inputType="textCapSentences"
+            android:lines="2"
+            android:maxLength="140"
+            android:paddingBottom="10dp"
+            android:singleLine="false"
+            android:padding="5dp"/>
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/input_layout_name2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/box_height"
             android:background="@layout/edit_text_stroke"
-            android:inputType="phone"
             android:backgroundTint="@color/windowBackground"
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:ems="10"
-            android:id="@+id/editText4"
-            android:textSize="15dp"
-            android:hint="@string/mobile_no"
-            android:layout_below="@+id/input_layout_name1"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:height="22dp"
-            android:layout_margin="@dimen/activity_horizontal_margin"/>
+            android:hint="@string/hint_email"
+            android:imeOptions="actionDone"
+            android:inputType="textCapSentences"
+            android:lines="2"
+            android:maxLength="140"
+            android:paddingBottom="10dp"
+            android:singleLine="false"
+            android:padding="5dp"
+            />
     </android.support.design.widget.TextInputLayout>
 
 
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/input_layout_name3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/box_height"
-            android:inputType="textEmailAddress"
             android:background="@layout/edit_text_stroke"
             android:backgroundTint="@color/windowBackground"
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:ems="10"
-            android:id="@+id/editText3"
-            android:textSize="15dp"
-            android:hint="@string/hint_email"
-            android:layout_below="@+id/button"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="87dp"
-            android:layout_margin="@dimen/activity_horizontal_margin"/>
+            android:hint="@string/hint_password"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:lines="2"
+            android:maxLength="140"
+            android:paddingBottom="10dp"
+            android:singleLine="false"
+            android:padding="5dp"
+            />
 
     </android.support.design.widget.TextInputLayout>
     <android.support.design.widget.TextInputLayout
         android:id="@+id/input_layout_name4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:background="@layout/edit_text_stroke"
             android:backgroundTint="@color/windowBackground"
-            android:inputType="textPassword"
+            android:id="@+id/mobile_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:ems="10"
-            android:id="@+id/editText2"
-            android:layout_below="@+id/editText"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:hint="@string/hint_password"
-            android:textSize="15dp"
-            android:layout_margin="@dimen/activity_horizontal_margin"/>
+            android:hint="@string/mobile_no"
+            android:imeOptions="actionDone"
+            android:inputType="textCapSentences"
+            android:lines="2"
+            android:maxLength="140"
+            android:paddingBottom="10dp"
+            android:singleLine="false"
+            android:padding="5dp"
+           />
 
     </android.support.design.widget.TextInputLayout>
         <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:id="@+id/radio_btn_group"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_margin="@dimen/activity_horizontal_margin">
             <RadioButton android:id="@+id/radio_pirates"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="male"
-                android:onClick="onRadioButtonClicked"/>
+               android:checked="true"/>
             <RadioButton android:id="@+id/radio_ninjas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="female"
-                android:onClick="onRadioButtonClicked"/>
+               android:checked="false"/>
         </RadioGroup>
         <Spinner
-            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:paddingLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:ems="10"
+            android:lines="2"
+            android:singleLine="false"
+            android:maxLength="140"
             android:background="@layout/edit_text_stroke"
             android:id="@+id/spinner1"
+            android:paddingBottom="10dp"
+            android:padding="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:entries="@array/country_arrays"
-            android:prompt="@string/country_prompt" />
+            />
         <LinearLayout
 
-            android:layout_margin="@dimen/activity_horizontal_margin"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
         <CheckBox
-            android:id="@+id/chkIos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/chk_ios" />
+            android:id="@+id/chkIos"
+            android:text="@string/chk_ios"
+            android:layout_gravity="center"
+            />
 
         <CheckBox
             android:id="@+id/chkAndroid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/chk_android"
-            android:checked="true" />
+            android:checked="true"
+            android:layout_gravity="center"/>
 
         <CheckBox
             android:id="@+id/chkWindows"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/chk_windows" />
+            android:text="@string/chk_windows"
+            android:layout_gravity="center"/>
        </LinearLayout>
 
         <DatePicker
@@ -155,12 +189,22 @@
             android:calendarViewShown="false"
             android:scaleX="1"
             android:scaleY="1" />
+        <SeekBar
+            android:id="@+id/seekbar1"
+            android:layout_below="@+id/seekbar1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="26dp"
+
+            android:max="100" >
+        </SeekBar>
 
         <Button
-        android:layout_width="238dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Get Status"
-        android:id="@+id/button"
+        android:id="@+id/get_status"
         android:shadowColor="#dfc5c5"
         android:startColor="#F7D358"
         android:centerColor="#DF7401"
@@ -171,7 +215,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="163dp"
-        android:layout_margin="@dimen/activity_horizontal_margin"/>
+        />
 
     </LinearLayout>
 </ScrollView>
