@@ -1,81 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".activity.StatusActivity"
-    tools:showIn="@layout/status_activity">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fitsSystemWindows="true">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="60dp"
+        android:layout_alignParentTop="true">
 
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_name1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
     <EditText
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/box_height"
+        android:background="@layout/edit_text_stroke"
+        android:backgroundTint="@color/windowBackground"
         android:inputType="textPersonName"
-        android:hint="Name"
+        android:hint="@string/hint_name"
         android:ems="10"
         android:id="@+id/editText"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:textSize="20dp" />
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:textSize="15dp" />
+    </android.support.design.widget.TextInputLayout>
 
-
-    <EditText
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_name2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/editText2"
-        android:layout_below="@+id/editText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:hint="password"
-        android:textSize="20dp" />
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:id="@+id/editText3"
-        android:layout_below="@+id/editText2"
-        android:layout_alignRight="@+id/editText2"
-        android:layout_alignEnd="@+id/editText2"
-        android:textSize="20dp"
-        android:hint="email" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/box_height"
+            android:background="@layout/edit_text_stroke"
+            android:inputType="phone"
+            android:backgroundTint="@color/windowBackground"
+            android:ems="10"
+            android:id="@+id/editText4"
+            android:textSize="15dp"
+            android:hint="@string/mobile_no"
+            android:layout_below="@+id/input_layout_name1"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:height="22dp"
+            android:layout_margin="@dimen/activity_horizontal_margin"/>
+    </android.support.design.widget.TextInputLayout>
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:ems="10"
-        android:id="@+id/editText4"
-        android:layout_below="@+id/editText3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textSize="20dp"
-        android:hint="Phone No" />
 
-    <Button
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_name3"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/box_height"
+            android:inputType="textEmailAddress"
+            android:background="@layout/edit_text_stroke"
+            android:backgroundTint="@color/windowBackground"
+            android:ems="10"
+            android:id="@+id/editText3"
+            android:textSize="15dp"
+            android:hint="@string/hint_email"
+            android:layout_below="@+id/button"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="87dp"
+            android:layout_margin="@dimen/activity_horizontal_margin"/>
+
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_name4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@layout/edit_text_stroke"
+            android:backgroundTint="@color/windowBackground"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/editText2"
+            android:layout_below="@+id/editText"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:hint="@string/hint_password"
+            android:textSize="15dp"
+            android:layout_margin="@dimen/activity_horizontal_margin"/>
+
+    </android.support.design.widget.TextInputLayout>
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/activity_horizontal_margin">
+            <RadioButton android:id="@+id/radio_pirates"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="male"
+                android:onClick="onRadioButtonClicked"/>
+            <RadioButton android:id="@+id/radio_ninjas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="female"
+                android:onClick="onRadioButtonClicked"/>
+        </RadioGroup>
+        <Spinner
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:background="@layout/edit_text_stroke"
+            android:id="@+id/spinner1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/country_arrays"
+            android:prompt="@string/country_prompt" />
+        <LinearLayout
+
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <CheckBox
+            android:id="@+id/chkIos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chk_ios" />
+
+        <CheckBox
+            android:id="@+id/chkAndroid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chk_android"
+            android:checked="true" />
+
+        <CheckBox
+            android:id="@+id/chkWindows"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chk_windows" />
+       </LinearLayout>
+
+        <DatePicker
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:id="@+id/datePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:calendarViewShown="false"
+            android:scaleX="1"
+            android:scaleY="1" />
+
+        <Button
+        android:layout_width="238dp"
         android:layout_height="wrap_content"
         android:text="Get Status"
         android:id="@+id/button"
         android:shadowColor="#dfc5c5"
-        android:layout_below="@+id/editText4"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="142dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
         android:startColor="#F7D358"
         android:centerColor="#DF7401"
         android:endColor="#F7D358"
         android:angle="45"
-        />
-</RelativeLayout>
+        android:background="@layout/edit_text_stroke"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="163dp"
+        android:layout_margin="@dimen/activity_horizontal_margin"/>
+
+    </LinearLayout>
+</ScrollView>
