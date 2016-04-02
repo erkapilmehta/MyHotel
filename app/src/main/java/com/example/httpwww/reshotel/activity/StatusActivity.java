@@ -147,11 +147,11 @@ public class StatusActivity extends Activity implements AdapterView.OnItemSelect
                 i.putExtra(Constants.INTENT_MOBILE_NO, mobileNo.getText().toString());
                 i.putExtra(Constants.INTENT_GENDER, gender);
                 i.putExtra(Constants.INTENT_COUNTRY, country);
-                if (cbox1.isChecked()) i.putExtra(Constants.INTENT_ANDROID,cbox1.getText().toString());
+                if (cbox1.isChecked()) i.putExtra(Constants.INTENT_ANDROID,"IPhone");
                 else if(!cbox1.isChecked()) i.putExtra(Constants.INTENT_ANDROID,"");
-                if (cbox2.isChecked()) i.putExtra(Constants.INTENT_IOS,cbox2.getText().toString());
+                if (cbox2.isChecked()) i.putExtra(Constants.INTENT_IOS,"Android");
                 else if (!cbox2.isChecked()) i.putExtra(Constants.INTENT_IOS,"");
-                if (cbox3.isChecked()) i.putExtra(Constants.INTENT_WINDOWS,cbox3.getText().toString());
+                if (cbox3.isChecked()) i.putExtra(Constants.INTENT_WINDOWS,"Windows");
                 else if (!cbox3.isChecked()) i.putExtra(Constants.INTENT_WINDOWS,"");
 
                 i.putExtra(Constants.INTENT_DATE,sdf.format(myCalendar.getTime()));

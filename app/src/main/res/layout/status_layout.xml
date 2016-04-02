@@ -35,7 +35,9 @@
             android:maxLength="140"
             android:paddingBottom="10dp"
             android:singleLine="false"
-            android:padding="5dp"/>
+            android:padding="5dp"
+            android:drawableRight="@drawable/ic_image_user"
+            />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -61,6 +63,7 @@
             android:paddingBottom="10dp"
             android:singleLine="false"
             android:padding="5dp"
+            android:drawableRight="@drawable/ic_image_email"
             />
     </android.support.design.widget.TextInputLayout>
 
@@ -89,6 +92,7 @@
             android:paddingBottom="10dp"
             android:singleLine="false"
             android:padding="5dp"
+            android:drawableRight="@drawable/ic_image_password"
             />
 
     </android.support.design.widget.TextInputLayout>
@@ -114,6 +118,7 @@
             android:paddingBottom="10dp"
             android:singleLine="false"
             android:padding="5dp"
+            android:drawableRight="@drawable/ic_image_mobile_no"
            />
 
     </android.support.design.widget.TextInputLayout>
@@ -126,13 +131,15 @@
             <RadioButton android:id="@+id/radiobutton_statusActivity_male"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="male"
-               android:checked="true"/>
+                 android:checked="true"
+                android:text="M"
+                android:drawableRight="@drawable/ic_image_male"/>
             <RadioButton android:id="@+id/radiobutton_statusActivity_female"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="female"
-               android:checked="false"/>
+                android:text="F"
+               android:checked="false"
+                android:drawableRight="@drawable/ic_image_female"/>
         </RadioGroup>
         <Spinner
             android:paddingLeft="10dp"
@@ -160,24 +167,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/checkbox_statusActivity_ios"
-            android:text="@string/chk_ios"
             android:layout_gravity="center"
+            android:drawableRight="@drawable/ic_image_iphone"
             />
 
         <CheckBox
             android:id="@+id/checkbox_statusActivity_android"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/chk_android"
             android:checked="true"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:drawableRight="@drawable/ic_image_android"/>
 
         <CheckBox
             android:id="@+id/checkbox_statusActivity_windows"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/chk_windows"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:drawableRight="@drawable/ic_image_windows"/>
        </LinearLayout>
 
             <EditText
@@ -199,6 +206,8 @@
                 android:paddingBottom="10dp"
                 android:singleLine="false"
                 android:padding="5dp"
+                android:drawableRight="@drawable/ic_image_date"
+
                 />
         <SeekBar
             android:id="@+id/seekBar_status_priceRange"
