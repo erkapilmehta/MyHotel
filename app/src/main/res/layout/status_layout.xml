@@ -10,8 +10,8 @@
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
         android:layout_alignParentTop="true">
 
     <android.support.design.widget.TextInputLayout
@@ -122,7 +122,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:layout_margin="@dimen/activity_horizontal_margin">
+            >
             <RadioButton android:id="@+id/radiobutton_statusActivity_male"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -179,33 +179,27 @@
             android:text="@string/chk_windows"
             android:layout_gravity="center"/>
        </LinearLayout>
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/input_layout_name5"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <TextView
-                android:id="@+id/date_textview"
+
+            <EditText
+                android:background="@layout/edit_text_stroke"
+                android:backgroundTint="@color/windowBackground"
+                android:id="@+id/edittext_statusActivity_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignRight="@+id/button1"
-                android:layout_below="@+id/textView2"
-                android:layout_marginTop="72dp"
                 android:layout_marginBottom="2dp"
                 android:layout_marginLeft="2dp"
                 android:layout_marginRight="2dp"
-                android:text="@string/date_selected"
                 android:ems="10"
-                android:background="@layout/edit_text_stroke"
-                android:backgroundTint="@color/windowBackground"
+                android:hint="Date"
                 android:imeOptions="actionDone"
-                android:inputType="text|date"
+                android:inputType="text|textCapSentences"
+                android:focusable="false"
                 android:lines="2"
                 android:maxLength="140"
                 android:paddingBottom="10dp"
                 android:singleLine="false"
                 android:padding="5dp"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-        </android.support.design.widget.TextInputLayout>
+                />
         <SeekBar
             android:id="@+id/seekBar_status_priceRange"
             android:layout_below="@+id/seekbar_statusActivity_range"
@@ -230,7 +224,6 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="163dp"
         />
 
     </LinearLayout>

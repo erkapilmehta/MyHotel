@@ -25,9 +25,5 @@
     <string name="chk_android">Android</string>
     <string name="chk_windows">Windows Mobile</string>
 
-    <string name="date_label_set">Press the button to set the date</string>
-    <string name="date_button_set">Set Date</string>
-    <string name="date_view_set">The Date is: </string>
-    <string name="date_selected"></string>
-
+    <string name="to_date">To Date</string>
 </resources>

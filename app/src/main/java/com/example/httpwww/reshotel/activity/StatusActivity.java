@@ -6,6 +6,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.text.InputType;
+import android.view.Menu;
 import android.view.View;
 
 import android.widget.AdapterView;
@@ -22,12 +24,16 @@ import android.widget.Spinner;
 import com.example.httpwww.reshotel.R;
 import com.example.httpwww.reshotel.Utils.Constants;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
+
 
 /**
  * Created by silenthacker on 31/03/16.
  */
 public class StatusActivity extends Activity implements AdapterView.OnItemSelectedListener {
-    String country = null;
+    String country;
      EditText fullName;;
      EditText email;
      EditText password;
@@ -40,11 +46,20 @@ public class StatusActivity extends Activity implements AdapterView.OnItemSelect
      String gender;
     SeekBar seekBar;
     Button getStatus;
+    EditText dateBox;
+    Calendar myCalendar;
+    String myFormat;
+    SimpleDateFormat sdf;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.status_activity);
+
+        init();
+
+        findViews();
         spinnerObject.setOnItemSelectedListener(this);
+        listeners();
 
 
     }
@@ -63,8 +78,9 @@ public class StatusActivity extends Activity implements AdapterView.OnItemSelect
 
     private void init()
     {
-        gender = ((RadioButton) findViewById(radioButtonGroup.getCheckedRadioButtonId())).getText().toString();
-        getStatus = (Button) findViewById(R.id.button_statusActivity_get_status);
+
+       myFormat = "d MMM,yyyy"; //In which you need put here
+       sdf = new SimpleDateFormat(myFormat, Locale.US);
 
     }
     private void findViews()
@@ -74,14 +90,50 @@ public class StatusActivity extends Activity implements AdapterView.OnItemSelect
         password = (EditText) findViewById(R.id.edittext_statusActivity_password);
         mobileNo = (EditText) findViewById(R.id.edittext_statusActivity_mobile_no);
         radioButtonGroup = (RadioGroup) findViewById(R.id.radiogroup_statusActivity_radio_btn_group);
+        gender = ((RadioButton) findViewById(radioButtonGroup.getCheckedRadioButtonId())).getText().toString();
         cbox1 = (CheckBox) findViewById(R.id.checkbox_statusActivity_ios);
         cbox2 = (CheckBox) findViewById(R.id.checkbox_statusActivity_android);
         cbox3 = (CheckBox) findViewById(R.id.checkbox_statusActivity_windows);
         spinnerObject = (Spinner) findViewById(R.id.spinner_statusActivity_country);
         seekBar = (SeekBar)findViewById(R.id.seekbar_statusActivity_range);
+        getStatus = (Button) findViewById(R.id.button_statusActivity_get_status);
+        dateBox= (EditText) findViewById(R.id.edittext_statusActivity_date);
+
+
+
+
+
+
     }
     private void listeners()
     {
+
+        myCalendar = Calendar.getInstance();
+
+        final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                  int dayOfMonth) {
+                // TODO Auto-generated method stub
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH, monthOfYear);
+                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                updateLabel();
+            }
+
+        };
+
+        dateBox.setOnClickListener(new View.OnClickListener(){
+
+
+            @Override
+            public void onClick(View v) {
+                new DatePickerDialog(StatusActivity.this, date, myCalendar
+                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
         getStatus.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -102,12 +154,20 @@ public class StatusActivity extends Activity implements AdapterView.OnItemSelect
                 if (cbox3.isChecked()) i.putExtra(Constants.INTENT_WINDOWS,cbox3.getText().toString());
                 else if (!cbox3.isChecked()) i.putExtra(Constants.INTENT_WINDOWS,"");
 
+                i.putExtra(Constants.INTENT_DATE,sdf.format(myCalendar.getTime()));
+
 
                 startActivity(i);
             }
         });
 
     }
+    private void updateLabel() {
+
+        dateBox.setText(sdf.format(myCalendar.getTime()));
+    }
+
 }
+
 
 

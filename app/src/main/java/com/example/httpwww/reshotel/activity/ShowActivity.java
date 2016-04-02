@@ -22,14 +22,18 @@ public class ShowActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.show_activity);
+
+        init();
+        findViews();
         dataListView.setAdapter(adapter);
+        listeners();
     }
 
 
     private void init()
     {
-        name = new String[]{"Name     ", "Email    ", "Password ", "Mobile No", "Gender   ", "Country  ", "Phone"};
-        value= new String[7];
+        name = new String[]{"Name     ", "Email    ", "Password ", "Mobile No", "Gender   ", "Country  ", "Phone","Date "};
+        value= new String[8];
        intent = getIntent();
         if (null != intent) {
             value[0] = intent.getStringExtra(Constants.INTENT_NAME);
@@ -39,6 +43,7 @@ public class ShowActivity extends Activity {
             value[4]= intent.getStringExtra(Constants.INTENT_GENDER);
             value[5]= intent.getStringExtra(Constants.INTENT_COUNTRY);
             value[6]=intent.getStringExtra(Constants.INTENT_ANDROID)+" "+intent.getStringExtra(Constants.INTENT_IOS)+" "+intent.getStringExtra(Constants.INTENT_WINDOWS);
+            value[7]=intent.getStringExtra(Constants.INTENT_DATE);
         }
 
         adapter= new DataListAdapter(ShowActivity.this, name, value);

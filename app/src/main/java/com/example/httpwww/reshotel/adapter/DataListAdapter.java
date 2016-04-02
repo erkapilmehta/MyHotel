@@ -31,7 +31,7 @@ import com.example.httpwww.reshotel.holder.ViewHolder;
 
     @Override
     public int getCount() {
-        return 7;
+        return 8;
     }
 
     @Override

@@ -33,16 +33,21 @@ public class NameActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hotel_activity);
+
+        init();
+        findViews();
         hotelListView.setAdapter(adapter);
+        listeners();
     }
 
 
     private void init()
     {
-        String[] hotelArray = { "The Venetian ","MGM Grand Las Vegas ","Izmailovo Hotel","Luxor Las Vegas","Caesars Palace","Sheraton Macao","Circus Circus Las Vegas","Shinagawa Prince Hotel","Flamingo Las Vegas","Atlantis Paradise Island","Task7","Task8","Task9","Task10","Task11","Task12","Task13","Task14","Task15","Task16","Task17","Task18","Task19"};
-        Integer[] imageId = {R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image4 };
+       hotelArray = new String[]{"The Venetian ", "MGM Grand Las Vegas ", "Izmailovo Hotel", "Luxor Las Vegas", "Caesars Palace", "Sheraton Macao", "Circus Circus Las Vegas", "Shinagawa Prince Hotel", "Flamingo Las Vegas", "Atlantis Paradise Island", "Task7", "Task8", "Task9", "Task10", "Task11", "Task12", "Task13", "Task14", "Task15", "Task16", "Task17", "Task18", "Task19"};
+        imageId = new Integer[]{R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image4};
         TextView myText = null;
         dialog = new Dialog(this);
+        adapter= new HotelListAdapter(NameActivity.this, hotelArray, imageId);
 
     }
     private void findViews()

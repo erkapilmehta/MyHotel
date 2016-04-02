@@ -28,7 +28,11 @@ public class RoomActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.room_activity);
+
+        init();
+        findViews();
         roomListView.setAdapter(adapter);
+        listeners();
 
     }
 

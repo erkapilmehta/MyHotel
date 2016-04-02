@@ -25,7 +25,11 @@ public class ListActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+
+        init();
+        findViews();
         menuListView.setAdapter(adapter);
+        listeners();
 
     }
 
@@ -34,8 +38,8 @@ public class ListActivity extends Activity {
 
     private void init()
     {
-        String[] menuArray = { "Hotel Name","Room Name ","Task Type","Status","Task1","Task2","Task3","Task4","Task5","Task6","Task7","Task8","Task9","Task10","Task11","Task12","Task13","Task14","Task15","Task16","Task17","Task18","Task19"};
-        Integer[] imageId = {R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image4 };
+         menuArray = new String[]{"Hotel Name", "Room Name ", "Task Type", "Status", "Task1", "Task2", "Task3", "Task4", "Task5", "Task6", "Task7", "Task8", "Task9", "Task10", "Task11", "Task12", "Task13", "Task14", "Task15", "Task16", "Task17", "Task18", "Task19"};
+         imageId = new Integer[]{R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image4};
         adapter = new CustomListAdapter(ListActivity.this, menuArray, imageId);
 
     }

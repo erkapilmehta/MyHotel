@@ -15,7 +15,10 @@ public class OtherTask extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.show);
 
-        t.setText("Task is not available");
+
+        init();
+        findViews();
+        listeners();
     }
 
     private void init()
@@ -30,7 +33,7 @@ public class OtherTask extends Activity {
     }
     private void listeners()
     {
-
+        t.setText("Task is not available");
     }
 
 
