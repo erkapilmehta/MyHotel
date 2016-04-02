@@ -4,13 +4,16 @@
     android:layout_height="match_parent"
     android:background="#08fbc0">
     <TableRow>
-        <ImageView
-            android:id="@+id/listview_image"
-            android:layout_width="50dp"
-            android:layout_height="50dp"/>
-
         <TextView
-            android:id="@+id/listview_txt"
+            android:id="@+id/textview_dataListAdapter_name"
+            android:layout_marginLeft="5dp"
+            android:clickable="false"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp" />
+        <TextView
+            android:id="@+id/textview_dataListAdapter_value"
             android:layout_marginLeft="5dp"
             android:clickable="false"
             android:gravity="center"

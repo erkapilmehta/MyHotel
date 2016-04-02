@@ -13,12 +13,11 @@ import com.example.httpwww.reshotel.R;
 import com.example.httpwww.reshotel.adapter.CustomListAdapter;
 
 public class ListActivity extends Activity {
-    private String[] menuArray = { "Hotel Name","Room Name ","Task Type","Status","Task1","Task2","Task3","Task4","Task5","Task6","Task7","Task8","Task9","Task10","Task11","Task12","Task13","Task14","Task15","Task16","Task17","Task18","Task19"};
-    Integer[] imageId = {R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image4 };
-
+    private String[] menuArray;
+    Integer[] imageId ;
     private ListView menuListView;
     private Toolbar toolbar;
-
+    CustomListAdapter adapter;
 
 
     /** Called when the activity is first created. */
@@ -26,12 +25,27 @@ public class ListActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-
-
-        CustomListAdapter adapter = new CustomListAdapter(ListActivity.this, menuArray, imageId);
-        menuListView = (ListView) findViewById(R.id.menu_list);
         menuListView.setAdapter(adapter);
+
+    }
+
+
+
+
+    private void init()
+    {
+        String[] menuArray = { "Hotel Name","Room Name ","Task Type","Status","Task1","Task2","Task3","Task4","Task5","Task6","Task7","Task8","Task9","Task10","Task11","Task12","Task13","Task14","Task15","Task16","Task17","Task18","Task19"};
+        Integer[] imageId = {R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image4 };
+        adapter = new CustomListAdapter(ListActivity.this, menuArray, imageId);
+
+    }
+    private void findViews()
+    {
+        toolbar = (Toolbar) findViewById(R.id.toolbar_listActivity);
+        menuListView = (ListView) findViewById(R.id.listview_menu_list);
+    }
+    private void listeners()
+    {
         menuListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,
@@ -57,7 +71,7 @@ public class ListActivity extends Activity {
                     Intent i = new Intent(getApplicationContext(),StatusActivity.class);
                     startActivity(i);
                 }
-               else if(position>3)
+                else if(position>3)
                 {
                     Toast.makeText(getApplicationContext(), "service not available", Toast.LENGTH_SHORT).show();
                 }
@@ -65,6 +79,8 @@ public class ListActivity extends Activity {
 
         });
 
-
     }
+
+
+
 }

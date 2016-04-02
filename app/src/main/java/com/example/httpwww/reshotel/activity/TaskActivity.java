@@ -16,9 +16,22 @@ public class TaskActivity extends Activity {
 
        TextView t = new TextView(this);
 
-        t = (TextView) findViewById(R.id.textView);
+        t = (TextView) findViewById(R.id.textview_otherTask);
         t.setText("No data is available to display");
     }
 
 
+    private void init()
+    {
+
     }
+    private void findViews()
+    {
+
+    }
+    private void listeners()
+    {
+
+    }
+
+}

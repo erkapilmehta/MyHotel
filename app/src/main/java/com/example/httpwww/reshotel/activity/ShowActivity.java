@@ -1,55 +1,54 @@
 package com.example.httpwww.reshotel.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
-
+import android.widget.ListView;
 import com.example.httpwww.reshotel.R;
+import com.example.httpwww.reshotel.Utils.Constants;
+import com.example.httpwww.reshotel.adapter.DataListAdapter;
+
 
 /**
  * Created by silenthacker on 01/04/16.
  */
 public class ShowActivity extends Activity {
-    TextView t;
+    private String[] name;
+    private String[] value;
+    Intent intent;
+    DataListAdapter adapter;
+
+    private ListView dataListView;
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.show_details);
-        Bundle bundle =getIntent().getExtras();
-
-        TextView t2 = new TextView(this);
-        TextView t4 = new TextView(this);
-        TextView t6 = new TextView(this);
-        TextView t8 = new TextView(this);
-        TextView t10 = new TextView(this);
-        TextView t12 = new TextView(this);
-        TextView t14 = new TextView(this);
-        TextView t16 = new TextView(this);
-        TextView t18 = new TextView(this);
-        TextView t20 = new TextView(this);
+        setContentView(R.layout.show_activity);
+        dataListView.setAdapter(adapter);
+    }
 
 
-        t2 = (TextView) findViewById(R.id.t2);
-        t2.setText(bundle.getString("name"));
-        t4 = (TextView) findViewById(R.id.t4);
-        t4.setText(bundle.getString("email"));
-        t6 = (TextView) findViewById(R.id.t6);
-        t6.setText(bundle.getString("password"));
-        t8 = (TextView) findViewById(R.id.t8);
-        t8.setText(bundle.getString("mobileNo"));
-        t10 = (TextView) findViewById(R.id.t10);
-        t10.setText(bundle.getString("gender"));
-        t12 = (TextView) findViewById(R.id.t12);
-        t12.setText(bundle.getString("country"));
-        t14 = (TextView) findViewById(R.id.t14);
-        t14.setText(bundle.getString("Ios"));
-        t16 = (TextView) findViewById(R.id.t16);
-        t16.setText(bundle.getString("Android"));
-        t18 = (TextView) findViewById(R.id.t18);
-        t18.setText(bundle.getString("Windows"));
-        t20= (TextView) findViewById(R.id.t20);
-        t20.setText(bundle.getString("date"));
+    private void init()
+    {
+        name = new String[]{"Name     ", "Email    ", "Password ", "Mobile No", "Gender   ", "Country  ", "Phone"};
+        value= new String[7];
+       intent = getIntent();
+        if (null != intent) {
+            value[0] = intent.getStringExtra(Constants.INTENT_NAME);
+            value[1] = intent.getStringExtra(Constants.INTENT_EMAIL);
+            value[2] = intent.getStringExtra(Constants.INTENT_PASSWORD);
+            value[3] = intent.getStringExtra(Constants.INTENT_MOBILE_NO);
+            value[4]= intent.getStringExtra(Constants.INTENT_GENDER);
+            value[5]= intent.getStringExtra(Constants.INTENT_COUNTRY);
+            value[6]=intent.getStringExtra(Constants.INTENT_ANDROID)+" "+intent.getStringExtra(Constants.INTENT_IOS)+" "+intent.getStringExtra(Constants.INTENT_WINDOWS);
+        }
 
-
+        adapter= new DataListAdapter(ShowActivity.this, name, value);
+    }
+    private void findViews()
+    {
+        dataListView = (ListView) findViewById(R.id.listview_showActivity_data_list);
+    }
+    private void listeners()
+    {
 
     }
 

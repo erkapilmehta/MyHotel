@@ -18,19 +18,36 @@ import com.example.httpwww.reshotel.adapter.RoomListAdapter;
  * Created by silenthacker on 31/03/16.
  */
 public class RoomActivity extends Activity {
-    private String[] roomArray = { "Single ","Double ","Triple","Queen","King","Deluxe","Circus Circus Las Vegas","Shinagawa Prince Hotel","Flamingo Las Vegas","Atlantis Paradise Island","Task7","Task8","Task9","Task10","Task11","Task12","Task13","Task14","Task15","Task16","Task17","Task18","Task19"};
-    Integer[] imageId = {R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image4 };
-
+    private String[] roomArray;
+    private Integer[] imageId;
     private ListView roomListView;
     private Toolbar toolbar;
+    Dialog dialog;
+    RoomListAdapter adapter;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.room_activity);
-        final Dialog dialog = new Dialog(this);
-        RoomListAdapter adapter = new RoomListAdapter(RoomActivity.this, roomArray, imageId);
-        roomListView = (ListView) findViewById(R.id.room_list);
         roomListView.setAdapter(adapter);
+
+    }
+
+    private void init()
+    {
+        roomArray = new String[]{"Single ", "Double ", "Triple", "Queen", "King", "Deluxe", "Circus Circus Las Vegas", "Shinagawa Prince Hotel", "Flamingo Las Vegas", "Atlantis Paradise Island", "Task7", "Task8", "Task9", "Task10", "Task11", "Task12", "Task13", "Task14", "Task15", "Task16", "Task17", "Task18", "Task19"};
+         imageId = new Integer[]{R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image4};
+        dialog = new Dialog(this);
+    }
+    private void findViews()
+    {
+        roomListView = (ListView) findViewById(R.id.listview_roomActivity_room_list);
+        adapter= new RoomListAdapter(RoomActivity.this, roomArray, imageId);
+
+
+    }
+    private void listeners()
+    {
+
         roomListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,
@@ -64,7 +81,6 @@ public class RoomActivity extends Activity {
             }
 
         });
-
-
     }
+
 }

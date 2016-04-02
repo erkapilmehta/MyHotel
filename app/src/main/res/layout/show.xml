@@ -4,12 +4,11 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
-
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="284dp"
+        android:layout_width="wrap_content"
+        android:layout_height="72dp"
         android:text="New Text"
-
-        android:id="@+id/textView"
-        android:textSize="20sp" />
+        android:id="@+id/textview_otherTask"
+        android:layout_weight="0.91"
+        android:textSize="25dp" />
 </LinearLayout>

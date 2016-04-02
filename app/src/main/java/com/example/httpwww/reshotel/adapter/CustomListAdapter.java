@@ -50,9 +50,9 @@ public class CustomListAdapter extends BaseAdapter{
         ViewHolder holder=new ViewHolder();
         LayoutInflater inflater =  ((ListActivity)context).getLayoutInflater();
         View rowView= inflater.inflate(R.layout.list_single, null, true);
-        holder.text = (TextView) rowView.findViewById(R.id.txt);
+        holder.text = (TextView) rowView.findViewById(R.id.listview_txt);
 
-        holder.icon = (ImageView) rowView.findViewById(R.id.img);
+        holder.icon = (ImageView) rowView.findViewById(R.id.listview_image);
         holder.text.setText(web[position]);
 
         holder.icon.setImageResource(imageId[position]);

@@ -21,20 +21,39 @@ import com.example.httpwww.reshotel.adapter.HotelListAdapter;
 public class NameActivity extends Activity {
 
 
-    private String[] hotelArray = { "The Venetian ","MGM Grand Las Vegas ","Izmailovo Hotel","Luxor Las Vegas","Caesars Palace","Sheraton Macao","Circus Circus Las Vegas","Shinagawa Prince Hotel","Flamingo Las Vegas","Atlantis Paradise Island","Task7","Task8","Task9","Task10","Task11","Task12","Task13","Task14","Task15","Task16","Task17","Task18","Task19"};
-    Integer[] imageId = {R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image4 };
+    private String[] hotelArray;
+    Integer[] imageId;
 
     private ListView hotelListView;
     private Toolbar toolbar;
-    private TextView myText = null;
+    private TextView myText;
+    Dialog dialog;
+    HotelListAdapter adapter;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hotel_activity);
-        final Dialog dialog = new Dialog(this);
-        HotelListAdapter adapter = new HotelListAdapter(NameActivity.this, hotelArray, imageId);
-        hotelListView = (ListView) findViewById(R.id.hotel_list);
         hotelListView.setAdapter(adapter);
+    }
+
+
+    private void init()
+    {
+        String[] hotelArray = { "The Venetian ","MGM Grand Las Vegas ","Izmailovo Hotel","Luxor Las Vegas","Caesars Palace","Sheraton Macao","Circus Circus Las Vegas","Shinagawa Prince Hotel","Flamingo Las Vegas","Atlantis Paradise Island","Task7","Task8","Task9","Task10","Task11","Task12","Task13","Task14","Task15","Task16","Task17","Task18","Task19"};
+        Integer[] imageId = {R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,R.drawable.image4 };
+        TextView myText = null;
+        dialog = new Dialog(this);
+
+    }
+    private void findViews()
+    {
+        adapter = new HotelListAdapter(NameActivity.this, hotelArray, imageId);
+        hotelListView = (ListView) findViewById(R.id.listview_nameActivity_hotel_list);
+
+
+    }
+    private void listeners()
+    {
         hotelListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,
