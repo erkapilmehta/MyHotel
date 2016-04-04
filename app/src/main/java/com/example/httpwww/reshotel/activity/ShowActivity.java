@@ -32,7 +32,7 @@ public class ShowActivity extends Activity {
 
     private void init()
     {
-        name = new String[]{"Name     ", "Email    ", "Password ", "Mobile No", "Gender   ", "Country  ", "Phone","Date "};
+        name = new String[]{"Name        :", "Email         :", "Password  :", "Mobile No :", "Gender      :", "Country     :", "Phone        :","Date           :"};
         value= new String[8];
        intent = getIntent();
         if (null != intent) {

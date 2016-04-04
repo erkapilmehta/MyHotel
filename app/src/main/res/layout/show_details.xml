@@ -20,6 +20,7 @@
         android:id="@+id/listview_showActivity_data_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@layout/rounded_corner"
         android:layout_gravity="center_horizontal|top"
         android:dividerHeight="10dp"
         android:divider="@android:color/transparent"

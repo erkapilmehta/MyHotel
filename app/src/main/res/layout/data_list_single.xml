@@ -2,21 +2,31 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#08fbc0">
+    android:background="#b0e2ff">
     <TableRow>
         <TextView
             android:id="@+id/textview_dataListAdapter_name"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
             android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:clickable="false"
-            android:gravity="center"
+            android:gravity="left"
             android:textStyle="bold"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="24px"
             android:layout_width="wrap_content"
             android:layout_height="50dp" />
         <TextView
-            android:id="@+id/textview_dataListAdapter_value"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:paddingLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:id="@+id/textview_dataListAdapter_value"
             android:clickable="false"
-            android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="50dp" />
 

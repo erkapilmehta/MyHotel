@@ -19,11 +19,15 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 
 import com.example.httpwww.reshotel.R;
 import com.example.httpwww.reshotel.Utils.Constants;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -95,7 +99,6 @@ public class StatusActivity extends Activity implements AdapterView.OnItemSelect
         cbox2 = (CheckBox) findViewById(R.id.checkbox_statusActivity_android);
         cbox3 = (CheckBox) findViewById(R.id.checkbox_statusActivity_windows);
         spinnerObject = (Spinner) findViewById(R.id.spinner_statusActivity_country);
-        seekBar = (SeekBar)findViewById(R.id.seekbar_statusActivity_range);
         getStatus = (Button) findViewById(R.id.button_statusActivity_get_status);
         dateBox= (EditText) findViewById(R.id.edittext_statusActivity_date);
 
@@ -139,6 +142,32 @@ public class StatusActivity extends Activity implements AdapterView.OnItemSelect
             @Override
             public void onClick(View view) {
 
+                try {
+                    File myFile = new File("/sdcard/form.txt");
+                    myFile.createNewFile();
+                    FileOutputStream fileout = new FileOutputStream(myFile);
+                    OutputStreamWriter myOutWriter = new OutputStreamWriter(fileout);
+                    myOutWriter.append("\n Name \t"+fullName.getText().toString());
+                    myOutWriter.append("\n Email \t"+email.getText().toString());
+                    myOutWriter.append("\n Password \t"+password.getText().toString());
+                    myOutWriter.append("\n Mobile No. \t"+mobileNo.getText().toString());
+
+                    if (cbox1.isChecked()) myOutWriter.append("\n IPhone \t" + "Y");
+                    else if(!cbox1.isChecked())  myOutWriter.append( "\n IPhone \t"+"N");
+                    if (cbox2.isChecked())  myOutWriter.append("\n Android \t" +"Y" );
+                    else if (!cbox2.isChecked())  myOutWriter.append("\n Android \t" +"N" );
+                    if (cbox3.isChecked())  myOutWriter.append("\n Windows \t"+"Y");
+                    else if (!cbox3.isChecked())  myOutWriter.append("\n Windows \t"+"N");
+
+                    myOutWriter.append("\n Date \t"+sdf.format(myCalendar.getTime()));
+                    myOutWriter.close();
+                    fileout.close();
+                    Toast.makeText(getBaseContext(),"Your Data Saved in SD card",
+                            Toast.LENGTH_SHORT).show();
+                } catch (Exception e) {
+                    Toast.makeText(getBaseContext(), e.getMessage(),
+                            Toast.LENGTH_SHORT).show();
+                }
                 Intent i = new Intent(StatusActivity.this, ShowActivity.class);
 
                 i.putExtra(Constants.INTENT_NAME, fullName.getText().toString());
