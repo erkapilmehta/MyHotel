@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="60dp"
+    >
+
+    <LinearLayout android:orientation="vertical"
+        android:paddingBottom="5dp">
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/listview_image"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/user_image_list"
+                />
+
+
+            <TextView
+                android:id="@+id/textview_twit_id_info"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:clickable="false"
+                android:background="#EAE0E0"
+                android:gravity="left"
+                android:textColorHighlight="#d9feb5"
+                android:textStyle="bold"
+                android:text="ID :"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="24px"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp" />
+            <View
+                android:layout_height="match_parent"
+                android:layout_width="1dp"
+                android:background="#44619D">
+
+            </View>
+            <TextView
+                android:id="@+id/textview_twit_id"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:clickable="false"
+                android:gravity="left"
+                android:textColorHighlight="#d9feb5"
+                android:textStyle="bold|italic"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="24px"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp" />
+
+            <View
+                android:layout_height="match_parent"
+                android:layout_width="1dp"
+                android:background="#44619D">
+
+            </View>
+            <TextView
+                android:id="@+id/textview_twit_user_info"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:clickable="false"
+                android:gravity="left"
+                android:text="User:"
+                android:background="#EAE0E0"
+                android:textColorHighlight="#d9feb5"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="24px"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp" />
+            <View
+                android:layout_height="match_parent"
+                android:layout_width="1dp"
+                android:background="#44619D">
+
+            </View>
+            <TextView
+                android:id="@+id/textview_twit_user"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:clickable="false"
+                android:gravity="left"
+                android:textColorHighlight="#d9feb5"
+                android:textStyle="bold|italic"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="24px"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp" />
+        </LinearLayout>
+
+    </TableRow>
+    <View
+        android:layout_height="1dp"
+        android:layout_width="match_parent"
+        android:background="#44619D">
+
+    </View>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <LinearLayout android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#6FD6DF">
+            <TextView
+                android:id="@+id/textview_twit_following_info"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:clickable="false"
+                android:gravity="left"
+                android:text="Following:"
+                android:textColorHighlight="#d9feb5"
+                android:textStyle="bold|italic"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="24px"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp" />
+            <TextView
+                android:id="@+id/textview_twit_following"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:clickable="false"
+                android:gravity="left"
+                android:textColorHighlight="#d9feb5"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="24px"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#A5BCC0">
+            <TextView
+                android:id="@+id/textview_twit_follower_info"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:clickable="false"
+                android:gravity="left"
+                android:text="Follower:"
+                android:textColorHighlight="#d9feb5"
+                android:textStyle="bold|italic"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="24px"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp" />
+            <TextView
+                android:id="@+id/textview_twit_follower"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:clickable="false"
+                android:gravity="left"
+                android:textColorHighlight="#d9feb5"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="24px"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp" />
+        </LinearLayout>
+            <LinearLayout android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#68A5B4">
+                <TextView
+                    android:id="@+id/textview_twit_star_info"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:clickable="false"
+                    android:gravity="left"
+                    android:text="Rating:"
+                    android:textColorHighlight="#d9feb5"
+                    android:textStyle="bold|italic"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textSize="24px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp" />
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:id="@+id/textview_twit_star"
+                    android:clickable="false"
+                    />
+
+                <!--<TextView-->
+                    <!--android:id="@+id/textview_twit_follower"-->
+                    <!--android:paddingTop="10dp"-->
+                    <!--android:paddingBottom="10dp"-->
+                    <!--android:layout_marginLeft="5dp"-->
+                    <!--android:layout_marginRight="5dp"-->
+                    <!--android:clickable="false"-->
+                    <!--android:gravity="left"-->
+                    <!--android:textColorHighlight="#d9feb5"-->
+                    <!--android:textStyle="bold|italic"-->
+                    <!--android:fontFamily="sans-serif-condensed"-->
+                    <!--android:textSize="24px"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="50dp" />-->
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#A5BCC0">
+                <TextView
+                    android:id="@+id/textview_twit_post_info"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:clickable="false"
+                    android:gravity="left"
+                    android:text="Post:"
+                    android:textColorHighlight="#d9feb5"
+                    android:textStyle="bold|italic"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textSize="24px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp" />
+                <TextView
+                    android:id="@+id/textview_twit_post"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:clickable="false"
+                    android:gravity="left"
+                    android:textColorHighlight="#d9feb5"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textSize="24px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </TableRow>
+
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/textview_twit_created_on_info"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:clickable="false"
+            android:gravity="left"
+            android:text="Created On:"
+            android:textColorHighlight="#d9feb5"
+            android:textStyle="bold|italic"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="24px"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp" />
+        <TextView
+            android:id="@+id/textview_twit_created_on"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:clickable="false"
+            android:gravity="left"
+            android:textColorHighlight="#d9feb5"
+            android:textStyle="italic"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="24px"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp" />
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/textview_twit_locale_info"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:clickable="false"
+            android:gravity="left"
+            android:text="Locale"
+            android:textColorHighlight="#d9feb5"
+            android:textStyle="bold|italic"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="24px"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp" />
+        <TextView
+            android:id="@+id/textview_twit_locale"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:clickable="false"
+            android:gravity="left"
+            android:textColorHighlight="#d9feb5"
+            android:textStyle="italic"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="24px"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp" />
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textview_twit_name_info"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:clickable="false"
+            android:gravity="left"
+            android:text="Company Name :"
+            android:textColorHighlight="#d9feb5"
+            android:textStyle="bold|italic"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="24px"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp" />
+        <TextView
+            android:id="@+id/textview_twit_name"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:clickable="false"
+            android:gravity="left"
+            android:textColorHighlight="#d9feb5"
+            android:textStyle="italic"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="24px"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/textview_twit_timezone_info"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:clickable="false"
+            android:gravity="left"
+            android:text="TimeZone :"
+            android:textColorHighlight="#d9feb5"
+            android:textStyle="bold|italic"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="24px"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp" />
+        <TextView
+            android:id="@+id/textview_twit_timezone"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:clickable="false"
+            android:gravity="left"
+            android:textColorHighlight="#d9feb5"
+            android:textStyle="italic"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="24px"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp" />
+
+
+    </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/textview_twit_description_info"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:clickable="false"
+                android:gravity="left"
+                android:text="Description :"
+                android:textColorHighlight="#d9feb5"
+                android:textStyle="bold|italic"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="24px"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp" />
+            <TextView
+                android:id="@+id/textview_twit_description"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:clickable="false"
+                android:gravity="left"
+                android:textColorHighlight="#d9feb5"
+                android:textStyle="italic"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="24px"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </TableRow>
+    </LinearLayout>
+</TableLayout>

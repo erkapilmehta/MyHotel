@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFF">
+    <TableRow>
+        <TextView
+            android:id="@+id/textview_user_list_fragment_name"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:clickable="false"
+            android:gravity="left"
+            android:textColorHighlight="#d9feb5"
+            android:textStyle="bold|italic"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="24px"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp" />
+
+    </TableRow>
+</TableLayout>

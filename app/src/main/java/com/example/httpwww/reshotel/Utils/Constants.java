@@ -15,4 +15,7 @@ public class Constants  {
     final public static String INTENT_IOS = "android";
     final public static String INTENT_WINDOWS = "windows";
     final public static String INTENT_DATE="date";
+    final public static String INTENT_RATING="rate";
+    final public static String INTENT_FILE_NAME="file";
+
 }

@@ -32,8 +32,8 @@ public class ShowActivity extends Activity {
 
     private void init()
     {
-        name = new String[]{"Name        :", "Email         :", "Password  :", "Mobile No :", "Gender      :", "Country     :", "Phone        :","Date           :"};
-        value= new String[8];
+        name = new String[]{"Name        :", "Email         :", "Password  :", "Mobile No :", "Gender      :", "Country     :", "Phone        :","Date           :","Rating        :"};
+        value= new String[9];
        intent = getIntent();
         if (null != intent) {
             value[0] = intent.getStringExtra(Constants.INTENT_NAME);
@@ -44,6 +44,7 @@ public class ShowActivity extends Activity {
             value[5]= intent.getStringExtra(Constants.INTENT_COUNTRY);
             value[6]=intent.getStringExtra(Constants.INTENT_ANDROID)+" "+intent.getStringExtra(Constants.INTENT_IOS)+" "+intent.getStringExtra(Constants.INTENT_WINDOWS);
             value[7]=intent.getStringExtra(Constants.INTENT_DATE);
+            value[8]=intent.getStringExtra(Constants.INTENT_RATING);
         }
 
         adapter= new DataListAdapter(ShowActivity.this, name, value);

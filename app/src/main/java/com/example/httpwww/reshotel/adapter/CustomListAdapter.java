@@ -30,7 +30,7 @@ public class CustomListAdapter extends BaseAdapter{
 
     @Override
     public int getCount() {
-        return 15;
+        return web.length;
     }
 
     @Override

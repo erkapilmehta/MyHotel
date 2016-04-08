@@ -38,7 +38,7 @@ public class ListActivity extends Activity {
 
     private void init()
     {
-         menuArray = new String[]{"Hotel Name", "Room Name ", "Task Type", "Status", "Task1", "Task2", "Task3", "Task4", "Task5", "Task6", "Task7", "Task8", "Task9", "Task10", "Task11", "Task12", "Task13", "Task14", "Task15", "Task16", "Task17", "Task18", "Task19"};
+         menuArray = new String[]{"Hotel Name", "Room Name ", "Task Type", "Status", "Get User List", "Task2", "task 3", "API Call", "Fragment", "Data", "Task7", "Task8", "Task9", "Task10", "Task11", "Task12", "Task13", "Task14", "Task15", "Task16", "Task17", "Task18", "Task19"};
          imageId = new Integer[]{R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image4};
         adapter = new CustomListAdapter(ListActivity.this, menuArray, imageId);
 
@@ -75,7 +75,37 @@ public class ListActivity extends Activity {
                     Intent i = new Intent(getApplicationContext(),StatusActivity.class);
                     startActivity(i);
                 }
-                else if(position>3)
+                if(position==4)
+                {
+                    Intent i = new Intent(getApplicationContext(),UserListActivity.class);
+                    startActivity(i);
+                }
+                if(position==5)
+                {
+                    Intent i = new Intent(getApplicationContext(),MemberActivity.class);
+                    startActivity(i);
+                }
+                if(position==6)
+                {
+                    Intent i = new Intent(getApplicationContext(),IntentShowActivity.class);
+                    startActivity(i);
+                }
+                if(position==7)
+                {
+                    Intent i = new Intent(getApplicationContext(),MainActivity.class);
+                    startActivity(i);
+                }
+                if(position==8)
+                {
+                    Intent i = new Intent(getApplicationContext(),FollowerActivity.class);
+                    startActivity(i);
+                }
+                if(position==9)
+                {
+                    Intent i = new Intent(getApplicationContext(),DataActivity.class);
+                    startActivity(i);
+                }
+                else if(position>9)
                 {
                     Toast.makeText(getApplicationContext(), "service not available", Toast.LENGTH_SHORT).show();
                 }

@@ -3,7 +3,7 @@
     android:shape="rectangle"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
-    <stroke android:width=".5dp"
+    <stroke android:width="0dp"
         android:color="#4799E8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -12,7 +12,7 @@
         android:layout_height="wrap_content" />
     <gradient
         android:startColor="#C8C8C8"
-        android:endColor="#FFFFFF"
+        android:endColor="#C8C8C8"
         android:type="linear"
         android:angle="270"
         android:layout_width="wrap_content"
